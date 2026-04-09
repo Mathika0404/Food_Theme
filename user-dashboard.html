@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food Admin Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/user-dashboard.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <div class="sidebar-header">
+    <h2 class="logo">STACKLY</h2>
+    <div class="close-btn" id="closeBtn">
+      <i class="ri-close-line"></i>
+    </div>
+  </div>
+
+  <ul class="menu">
+    <li><a href="#home" class="active"><i class="ri-restaurant-line"></i> Dashboard</a></li>
+  <li><a href="#orders"><i class="ri-shopping-bag-3-line"></i> My Orders</a></li>
+  <li><a href="#wishlist"><i class="ri-heart-line"></i> Wishlist</a></li>
+  <li><a href="#reviews"><i class="ri-star-smile-line"></i> My Reviews</a></li>
+  <li><a href="#profile"><i class="ri-user-3-line"></i> Profile</a></li>
+  <div class="menu-title">ACCOUNT</div>
+  <li><a href="dashboard-404.html"><i class="ri-settings-4-line"></i> Settings</a></li>
+  <li><a href="dashboard-404.html"><i class="ri-logout-box-r-line"></i> Logout</a></li>
+  </ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <!-- LEFT -->
+  <div class="nav-left">
+    <div class="menu-btn" id="menuBtn">
+      <i class="ri-menu-line"></i>
+    </div>
+
+    <div class="nav-search">
+      <i class="ri-search-line"></i>
+      <input type="text" placeholder="Search food...">
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <h2 class="mobile-logo">STACKLY</h2>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+
+    <div class="icon hide-mobile">
+      <a href="404.html">
+        <i class="ri-notification-3-line"></i>
+        <span class="badge">2</span>
+      </a>
+    </div>
+
+    <div class="icon hide-mobile">
+      <a href="404.html">
+        <i class="ri-chat-1-line"></i>
+        <span class="badge">4</span>
+      </a>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">
+        <i class="ri-user-3-line"></i>
+      </div>
+      <div class="profile-info">
+        <p class="name">Karthick User</p>
+        <p class="email">karthick@foodify.com</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<section class="user-dashboard" id="home">
+
+<div class="welcome-box">
+  <h1>Welcome Back, Karthick 👋</h1>
+  <p>Your dashboard today</p>
+</div>
+
+  <!-- TOP STATS -->
+  <div class="user-stats">
+
+    <div class="user-card">
+      <i class="ri-shopping-bag-3-line"></i>
+      <h3>120</h3>
+      <p>Total Orders</p>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-heart-3-line"></i>
+      <h3>35</h3>
+      <p>Wishlist Items</p>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-star-smile-line"></i>
+      <h3>28</h3>
+      <p>Reviews Given</p>
+    </div>
+
+    <div class="user-card">
+      <i class="ri-wallet-3-line"></i>
+      <h3>₹18K</h3>
+      <p>Total Spent</p>
+    </div>
+
+  </div>
+
+  <!-- PROGRESS + ACTIVITY -->
+  <div class="user-bottom">
+
+    <!-- ORDER PROGRESS -->
+    <div class="progress-box">
+      <h3>Order Activity</h3>
+
+      <div class="progress-item">
+        <span><i class="ri-checkbox-circle-line"></i> Completed</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:75%"></div>
+        </div>
+      </div>
+
+      <div class="progress-item">
+        <span><i class="ri-time-line"></i> Pending</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:20%"></div>
+        </div>
+      </div>
+
+      <div class="progress-item">
+        <span><i class="ri-close-circle-line"></i> Cancelled</span>
+        <div class="progress">
+          <div class="progress-bar" style="width:5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECENT ACTIVITY -->
+    <div class="activity-box">
+      <h3>Recent Activity</h3>
+
+      <div class="activity">
+        <p><i class="ri-restaurant-line"></i> Ordered Burger</p>
+        <span>2 mins ago</span>
+      </div>
+
+      <div class="activity">
+        <p><i class="ri-star-line"></i> Rated Pizza</p>
+        <span>1 hour ago</span>
+      </div>
+
+      <div class="activity">
+        <p><i class="ri-heart-line"></i> Added to wishlist</p>
+        <span>Yesterday</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="my-orders" id="orders">
+
+  <!-- CATEGORY -->
+  <div class="order-category">
+
+    <h2 class="dash-heading">My Orders</h2>
+
+    <div class="category-container">
+
+      <div class="category-card">
+        <i class="ri-shopping-bag-3-line"></i>
+        <p>All Orders</p>
+      </div>
+
+      <div class="category-card">
+        <i class="ri-time-line"></i>
+        <p>Pending</p>
+      </div>
+
+      <div class="category-card">
+        <i class="ri-checkbox-circle-line"></i>
+        <p>Delivered</p>
+      </div>
+
+      <div class="category-card">
+        <i class="ri-close-circle-line"></i>
+        <p>Cancelled</p>
+      </div>
+
+      <div class="category-card">
+        <i class="ri-truck-line"></i>
+        <p>On the Way</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RECENT ORDERS -->
+  <div class="recent-orders-box">
+
+    <div class="heading-row">
+      <h3>My Recent Orders</h3>
+      <a href="dashboard-404.html">View all →</a>
+    </div>
+
+    <div class="recent-orders-container">
+
+      <div class="order-card">
+        <img src="images/burger.webp">
+        <h4>Fish Burger</h4>
+        <p>Ordered yesterday • ₹199</p>
+      </div>
+
+      <div class="order-card">
+        <img src="images/pizza.webp">
+        <h4>Cheese Pizza</h4>
+        <p>Delivered • ₹299</p>
+      </div>
+
+      <div class="order-card">
+        <img src="images/pasta.webp">
+        <h4>Creamy Pasta</h4>
+        <p>On the way • ₹249</p>
+      </div>
+
+      <div class="order-card">
+        <img src="images/grilled_chicken.webp">
+        <h4>Grilled Chicken</h4>
+        <p>Delivered • ₹349</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- POPULAR -->
+  <div class="popular-orders">
+
+    <div class="heading-row">
+      <h3>Popular Items</h3>
+      <a href="#">View all →</a>
+    </div>
+
+    <div class="popular-container">
+
+      <div class="popular-card">
+        <img src="images/burger.webp">
+        <h4>Double Burger</h4>
+        <p>Best selling item with great taste</p>
+      </div>
+
+      <div class="popular-card">
+        <img src="images/pizza.webp">
+        <h4>Cheese Burst Pizza</h4>
+        <p>Loaded with cheese and flavors</p>
+      </div>
+
+      <div class="popular-card">
+        <img src="images/pasta.webp">
+        <h4>Italian Pasta</h4>
+        <p>Creamy and delicious pasta</p>
+      </div>
+
+      <div class="popular-card">
+        <img src="images/chicken.webp">
+        <h4>Chicken</h4>
+        <p>Crispy and spicy chicken</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="wishlist-section" id="wishlist">
+
+  <div class="heading-row">
+    <h2 class="dash-heading">My Wishlist ❤️</h2>
+    <a href="#">View all →</a>
+  </div>
+
+  <div class="wishlist-container">
+
+    <!-- CARD 1 -->
+    <div class="wishlist-card">
+      <div class="wishlist-img">
+        <img src="images/pizza.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+
+      <div class="wishlist-content">
+        <h3>Cheese Pizza</h3>
+        <p>Loaded with cheese and toppings</p>
+        <span class="price">₹299</span>
+
+        <div class="wishlist-actions">
+          <button onclick="go404()" class="cart-btn">
+            <i class="ri-shopping-cart-line"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="wishlist-card">
+      <div class="wishlist-img">
+        <img src="images/burger.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+
+      <div class="wishlist-content">
+        <h3>Burger</h3>
+        <p>Juicy and crispy burger</p>
+        <span class="price">₹199</span>
+
+        <div class="wishlist-actions">
+          <button onclick="go404()" class="cart-btn">
+            <i class="ri-shopping-cart-line"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="wishlist-card">
+      <div class="wishlist-img">
+        <img src="images/pasta.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+
+      <div class="wishlist-content">
+        <h3>Pasta</h3>
+        <p>Creamy Italian pasta</p>
+        <span class="price">₹249</span>
+
+        <div class="wishlist-actions">
+          <button onclick="go404()" class="cart-btn">
+            <i class="ri-shopping-cart-line"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="wishlist-card">
+      <div class="wishlist-img">
+        <img src="images/grilled_chicken.webp" alt="">
+        <i class="ri-heart-fill heart"></i>
+      </div>
+
+      <div class="wishlist-content">
+        <h3>Grilled Chicken</h3>
+        <p>Spicy grilled chicken</p>
+        <span class="price">₹349</span>
+
+        <div class="wishlist-actions">
+          <button onclick="go404()" class="cart-btn">
+            <i class="ri-shopping-cart-line"></i> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="my-reviews" id="reviews">
+
+  <div class="heading-row">
+    <h2 class="dash-heading">My Reviews ⭐</h2>
+    <a href="dashboard-404.html">View all →</a>
+  </div>
+
+  <div class="reviews-container">
+
+    <!-- REVIEW CARD -->
+    <div class="my-review-card">
+
+      <div class="review-img">
+        <img src="images/pizza.webp" alt="">
+      </div>
+
+      <div class="review-content">
+        <h3>Cheese Pizza</h3>
+
+        <div class="stars">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-half-fill"></i>
+        </div>
+
+        <p>Amazing taste and loaded with cheese. Loved it!</p>
+
+        <span class="date">Reviewed on Aug 12</span>
+      </div>
+
+      <div class="review-actions">
+        <i class="ri-edit-2-line" onclick="go404()"></i>
+        <i class="ri-delete-bin-line" onclick="go404()"></i>
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="my-review-card">
+
+      <div class="review-img">
+        <img src="images/burger.webp" alt="">
+      </div>
+
+      <div class="review-content">
+        <h3>Burger</h3>
+
+        <div class="stars">
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-fill"></i>
+          <i class="ri-star-line"></i>
+          <i class="ri-star-line"></i>
+        </div>
+
+        <p>Good taste but could be more juicy.</p>
+
+        <span class="date">Reviewed on Aug 10</span>
+      </div>
+
+      <div class="review-actions">
+        <i class="ri-edit-2-line" onclick="go404()"></i>
+        <i class="ri-delete-bin-line" onclick="go404()"></i>
+      </div>
+
+    </div>
+
+    
+<!-- CARD 3 -->
+<div class="my-review-card">
+
+  <div class="review-img">
+    <img src="images/pasta.webp" alt="">
+  </div>
+
+  <div class="review-content">
+    <h3>Pasta</h3>
+
+    <div class="stars">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-line"></i>
+    </div>
+
+    <p>Creamy and delicious. Perfectly cooked pasta!</p>
+
+    <span class="date">Reviewed on Aug 8</span>
+  </div>
+
+  <div class="review-actions">
+    <i class="ri-edit-2-line" onclick="go404()"></i>
+    <i class="ri-delete-bin-line" onclick="go404()"></i>
+  </div>
+
+</div>
+
+
+<!-- CARD 4 -->
+<div class="my-review-card">
+
+  <div class="review-img">
+    <img src="images/grilled_chicken.webp" alt="">
+  </div>
+
+  <div class="review-content">
+    <h3>Grilled Chicken</h3>
+
+    <div class="stars">
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-fill"></i>
+      <i class="ri-star-half-fill"></i>
+      <i class="ri-star-line"></i>
+    </div>
+
+    <p>Spicy and juicy chicken. Loved the flavor 🔥</p>
+
+    <span class="date">Reviewed on Aug 5</span>
+  </div>
+
+  <div class="review-actions">
+    <i class="ri-edit-2-line" onclick="go404()"></i>
+    <i class="ri-delete-bin-line" onclick="go404()"></i>
+  </div>
+
+</div>
+
+
+  </div>
+
+</section>
+
+<section class="profile-section" id="profile">
+
+  <h2 class="dash-heading">My Profile</h2>
+
+  <div class="profile-container">
+
+    <!-- LEFT (IMAGE) -->
+    <div class="profile-left">
+      <img src="images/customer1.webp" alt="">
+      <h3>Karthick</h3>
+      <p>Food Lover 🍔</p>
+    </div>
+
+    <!-- RIGHT (DETAILS) -->
+    <div class="profile-right">
+
+      <div class="profile-item">
+        <i class="ri-map-pin-line"></i>
+        <span>Chennai, Tamil Nadu</span>
+      </div>
+
+      <div class="profile-item">
+        <i class="ri-phone-line"></i>
+        <span>+91 98765 43210</span>
+      </div>
+
+      <div class="profile-item">
+        <i class="ri-mail-line"></i>
+        <span>karthick@gmail.com</span>
+      </div>
+
+      <div class="profile-item">
+        <i class="ri-user-line"></i>
+        <span>Username: Karthick_Reddy</span>
+      </div>
+
+      <button onclick="go404()" class="edit-btn">
+        <i class="ri-edit-2-line"></i> Edit Profile
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/admin-dashboard.js"></script>
+<script>
+    function go404(){
+  window.location.href = "dashboard-404.html";
+}
+</script>
+</body>
+</html>

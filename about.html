@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Solution Website</title>
+
+  <!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- REMIX ICON -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="loginModal" class="login-modal">
+
+  <div class="login-box">
+
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+    <!-- LOGO -->
+    <div class="bio-logo">
+      <i class="ri-restaurant-line"></i>
+    </div>
+
+    <h2 id="formTitle">Welcome Back</h2>
+
+    <p id="formSubtitle">
+      Login to explore delicious dishes and manage your orders
+    </p>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)">
+
+      <!-- ROLE -->
+      <div id="loginRoleBox">
+        <label>Login As</label>
+        <select id="loginRole">
+          <option value="admin">Admin</option>
+          <option value="user">Customer</option>
+        </select>
+        <p class="role-note">Choose your role to continue</p>
+      </div>
+
+      <!-- NAME -->
+      <input type="text" id="fullName" placeholder="Full Name" style="display:none;">
+
+      <!-- PHONE -->
+      <input type="tel" id="phoneNumber" placeholder="Phone Number">
+
+      <!-- EMAIL -->
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <!-- PASSWORD -->
+      <div class="password-field">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <i class="ri-eye-off-line toggle-eye" id="eyeIcon" onclick="togglePassword()"></i>
+      </div>
+
+      <!-- CONFIRM -->
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+
+      <button type="submit" class="login-submit" id="submitBtn">
+        Login to Order
+      </button>
+
+    </form>
+
+    <p class="switch-text">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" onclick="toggleAuth()">Sign up</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+    <!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="./images/stackly_logo.webp" class="logo-img" alt="logo">
+        </a>
+      </div>
+
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="categories.html">Menu</a></li>
+      <!-- <li><a href="offers.html">Offers</a></li> -->
+      <li><a href="contact.html">Contact Us</a></li>
+<li>
+  <a href="javascript:void(0)" class="login-btn" onclick="openLogin()">Login</a>
+</li>
+    </ul>
+
+  </nav>
+</header>
+
+
+<section class="about-hero">
+
+  <!-- OVERLAY -->
+  <div class="about-overlay"></div>
+
+  <!-- CONTENT -->
+  <div class="about-content">
+    <h1>About Us</h1>
+    <p>Discover our story, passion, and commitment to delivering the best food experience.</p>
+  </div>
+
+</section>
+
+
+<section class="our-story">
+
+  <div class="story-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="story-left">
+      <h2>Our Story</h2>
+      <p>
+        We started with a simple passion — to serve delicious, high-quality food
+        with love and care. Over the years, we have grown into a trusted name,
+        delivering tasty meals and unforgettable experiences to our customers.
+      </p>
+
+      <p>
+        Our journey is driven by quality, innovation, and customer satisfaction.
+        Every dish we prepare reflects our dedication and love for food.
+      </p>
+
+      <!-- 🔥 STATS -->
+      <div class="story-stats">
+
+        <div class="stat-card">
+          <h3>260+</h3>
+          <p>Happy Customers</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>975+</h3>
+          <p>Orders Delivered</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>724+</h3>
+          <p>Dishes Served</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>89+</h3>
+          <p>Team Members</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>95%</h3>
+          <p>Customer Satisfaction</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="story-right">
+      <img src="images/about1.webp" alt="Our Story">
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="mv-section">
+
+  <div class="mv-top">
+
+    <!-- LEFT BIG HEADING -->
+    <div class="mv-heading-box">
+      <h2>Our Mission<br>& Vision</h2>
+    </div>
+
+    <!-- RIGHT MISSION -->
+    <div class="mv-row right">
+      <div class="mv-image">
+        <img src="images/mission.webp" alt="Mission">
+      </div>
+      <div class="mv-content">
+        <h3>Mission</h3>
+        <p>
+          Our mission is to provide high-quality, delicious food with fast service.
+          We focus on freshness, taste, and customer satisfaction.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VISION -->
+  <div class="mv-row left">
+    <div class="mv-image">
+      <img src="images/vision.webp" alt="Vision">
+    </div>
+    <div class="mv-content">
+      <h3>Vision</h3>
+      <p>
+        Our vision is to become a trusted food brand known for innovation,
+        quality, and unforgettable customer experiences.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section class="experts-section">
+
+  <h2 class="experts-heading">Our Expert Chefs</h2>
+
+  <div class="experts-container">
+
+    <!-- CARD 1 -->
+    <div class="expert-card">
+      <div class="expert-img">
+        <img src="images/chef1.webp" alt="Chef">
+      </div>
+      <h3>Alex Brown</h3>
+      <p>Grill Specialist</p>
+
+<div class="expert-social">
+  <a href="404.html"><i class="ri-facebook-fill"></i></a>
+  <a href="404.html"><i class="ri-instagram-line"></i></a>
+  <a href="404.html"><i class="ri-twitter-x-line"></i></a>
+</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="expert-card">
+      <div class="expert-img">
+        <img src="images/chef2.webp" alt="Chef">
+      </div>
+      <h3>Emma Wilson</h3>
+      <p>Head Chef</p>
+
+<div class="expert-social">
+  <a href="404.html"><i class="ri-facebook-fill"></i></a>
+  <a href="404.html"><i class="ri-instagram-line"></i></a>
+  <a href="404.html"><i class="ri-twitter-x-line"></i></a>
+</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="expert-card">
+      <div class="expert-img">
+        <img src="images/chef3.webp" alt="Chef">
+      </div>
+      <h3>David Lee</h3>
+      <p>Pastry Chef</p>
+
+<div class="expert-social">
+  <a href="404.html"><i class="ri-facebook-fill"></i></a>
+  <a href="404.html"><i class="ri-instagram-line"></i></a>
+  <a href="404.html"><i class="ri-twitter-x-line"></i></a>
+</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="expert-card">
+      <div class="expert-img">
+        <img src="images/chef4.webp" alt="Chef">
+      </div>
+      <h3>John Smith</h3>
+      <p>Senior Chef</p>
+
+<div class="expert-social">
+  <a href="404.html"><i class="ri-facebook-fill"></i></a>
+  <a href="404.html"><i class="ri-instagram-line"></i></a>
+  <a href="404.html"><i class="ri-twitter-x-line"></i></a>
+</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="bio-footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT FOOD -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="./images/stackly_logo.webp" alt="Food Logo">
+      </div>
+
+      <p>
+        We serve delicious and freshly prepared meals with the finest ingredients.
+        Enjoy a wide variety of dishes, fast delivery, and an amazing dining experience
+        right at your doorstep.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul class="social-links">
+        <li><a href="404.html"><i class="ri-facebook-fill"></i> Facebook</a></li>
+        <li><a href="404.html"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+        <li><a href="404.html"><i class="ri-instagram-line"></i> Instagram</a></li>
+        <li><a href="404.html"><i class="ri-youtube-fill"></i> YouTube</a></li>
+      </ul>
+    </div>
+
+    <!-- FOOD CATEGORIES -->
+    <div class="footer-col">
+      <h4>Our Menu</h4>
+      <ul>
+        <li><a href="404.html">Veg Dishes</a></li>
+        <li><a href="404.html">Non-Veg Dishes</a></li>
+        <li><a href="404.html">Desserts</a></li>
+        <li><a href="404.html">Beverages</a></li>
+        <li><a href="404.html">Special Combos</a></li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMER SUPPORT -->
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="404.html">My Orders</a></li>
+        <li><a href="404.html">Track Order</a></li>
+        <li><a href="404.html">Help Center</a></li>
+        <li><a href="404.html">Privacy Policy</a></li>
+        <li><a href="404.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Stackly Food | All Rights Reserved</p>
+  </div>
+
+</footer>
+<script src="./js/script.js"></script>
+</body>
+</html>

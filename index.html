@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Solution Website</title>
+
+  <!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <!-- REMIX ICON -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="loginModal" class="login-modal">
+
+  <div class="login-box">
+
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+    <!-- LOGO -->
+    <div class="bio-logo">
+      <i class="ri-restaurant-line"></i>
+    </div>
+
+    <h2 id="formTitle">Welcome Back</h2>
+
+    <p id="formSubtitle">
+      Login to explore delicious dishes and manage your orders
+    </p>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)">
+
+      <!-- ROLE -->
+      <div id="loginRoleBox">
+        <label>Login As</label>
+        <select id="loginRole">
+          <option value="admin">Admin</option>
+          <option value="user">Customer</option>
+        </select>
+        <p class="role-note">Choose your role to continue</p>
+      </div>
+
+      <!-- NAME -->
+      <input type="text" id="fullName" placeholder="Full Name" style="display:none;">
+
+      <!-- PHONE -->
+      <input type="tel" id="phoneNumber" placeholder="Phone Number">
+
+      <!-- EMAIL -->
+      <input type="email" id="email" placeholder="Email Address" required>
+
+      <!-- PASSWORD -->
+      <div class="password-field">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <i class="ri-eye-off-line toggle-eye" id="eyeIcon" onclick="togglePassword()"></i>
+      </div>
+
+      <!-- CONFIRM -->
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" style="display:none;">
+
+      <button type="submit" class="login-submit" id="submitBtn">
+        Login to Order
+      </button>
+
+    </form>
+
+    <p class="switch-text">
+      <span id="switchText">Don't have an account?</span>
+      <a href="#" onclick="toggleAuth()">Sign up</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+    <!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="./images/stackly_logo.webp" class="logo-img" alt="logo">
+        </a>
+      </div>
+
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+
+    <ul class="nav__links" id="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home</a>
+      </li>
+
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="categories.html">Menu</a></li>
+      <!-- <li><a href="offers.html">Offers</a></li> -->
+      <li><a href="contact.html">Contact Us</a></li>
+<li>
+  <a href="javascript:void(0)" class="login-btn" onclick="openLogin()">Login</a>
+</li>
+    </ul>
+
+  </nav>
+</header>
+
+<section class="hero">
+
+  <!-- SLIDER -->
+  <div class="hero-slider">
+
+    <!-- SLIDE 1 -->
+    <div class="slide active">
+      <div class="hero-content">
+        <h1>Delicious Meals</h1>
+        <p>Fresh & tasty food delivered to your door</p>
+        <button class="order-btns" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide">
+      <div class="hero-content">
+        <h1>Hot & Spicy</h1>
+        <p>Experience the real taste of Indian spices</p>
+        <button class="order-btns" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide">
+      <div class="hero-content">
+        <h1>Fast Delivery</h1>
+        <p>Your favorite food in minutes</p>
+        <button class="order-btns" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="categories">
+
+  <!-- HEADING -->
+  <h2 class="category-heading">Our Food Categories</h2>
+
+  <!-- HORIZONTAL MENU -->
+  <div class="category-menu">
+    <button class="cat-btn active" onclick="filterItems('all')">All</button>
+    <button class="cat-btn" onclick="filterItems('veg')">Veg</button>
+    <button class="cat-btn" onclick="filterItems('nonveg')">Non-Veg</button>
+    <button class="cat-btn" onclick="filterItems('dessert')">Desserts</button>
+  </div>
+
+  <!-- ITEMS -->
+  <div class="food-items">
+
+    <div class="food-card veg">
+      <div class="img-box">
+        <img src="images/panneer.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Paneer Butter Masala</h3>
+      <p class="price">₹250</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+    <div class="food-card nonveg">
+      <div class="img-box">
+        <img src="images/chicken_rice.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Chicken Biryani</h3>
+      <p class="price">₹300</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+    <div class="food-card dessert">
+      <div class="img-box">
+        <img src="images/chocolate_cake.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Chocolate Cake</h3>
+      <p class="price">₹180</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+    <div class="food-card veg">
+      <div class="img-box">
+        <img src="images/veg_rice.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Veg Fried Rice</h3>
+      <p class="price">₹200</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+    <div class="food-card nonveg">
+      <div class="img-box">
+        <img src="images/grilled_chicken.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Grilled Chicken</h3>
+      <p class="price">₹350</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+    <div class="food-card dessert">
+      <div class="img-box">
+        <img src="images/ice_cream.webp">
+        <i class="ri-heart-line heart"></i>
+      </div>
+      <h3>Ice Cream</h3>
+      <p class="price">₹120</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <button class="order-btn" onclick="go404()">Order Now</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="popular-section">
+
+  <h2 class="popular-title">Our Most Popular Items</h2>
+
+  <div class="popular-grid">
+
+    <!-- CARD 1 -->
+    <div class="popular-card">
+      <div class="popular-img-box">
+        <img src="images/popular1.webp">
+        <span class="popular-badge">Popular</span>
+      </div>
+      <div class="popular-content">
+        <h3>Chicken Biryani</h3>
+        <p class="popular-price">₹300</p>
+        <div class="popular-stars">⭐⭐⭐⭐⭐</div>
+        <button class="popular-btn" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="popular-card">
+      <div class="popular-img-box">
+        <img src="images/popular2.webp">
+        <span class="popular-badge">Hot</span>
+      </div>
+      <div class="popular-content">
+        <h3>Cheese Pizza</h3>
+        <p class="popular-price">₹250</p>
+        <div class="popular-stars">⭐⭐⭐⭐☆</div>
+        <button class="popular-btn" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="popular-card">
+      <div class="popular-img-box">
+        <img src="images/popular3.webp">
+        <span class="popular-badge">Top</span>
+      </div>
+      <div class="popular-content">
+        <h3>Veg Burger</h3>
+        <p class="popular-price">₹150</p>
+        <div class="popular-stars">⭐⭐⭐⭐☆</div>
+        <button class="popular-btn" onclick="go404()">Order Now</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="why-section">
+
+  <div class="why-container">
+
+    <!-- LEFT SIDE (BIG CONTENT) -->
+    <div class="why-left">
+      <h2>Why Choose Us</h2>
+      <p>
+        We deliver high-quality food with speed, hygiene, and taste.
+        Our service is designed to give you the best experience every time you order.
+
+        We are committed to delivering delicious, high-quality food made with fresh ingredients and prepared with care. Every dish is crafted to give you the perfect balance of taste, hygiene, and satisfaction, ensuring a delightful experience in every bite.
+
+From fast and reliable delivery to affordable pricing, our service is designed to make your ordering experience smooth and convenient. We focus on quality, consistency, and customer happiness so that you can enjoy your favorite meals anytime without any compromise.
+      </p>
+      <button class="why-btn" onclick="go404()">Explore Menu</button>
+    </div>
+
+    <!-- RIGHT SIDE (CLEAN LIST) -->
+    <div class="why-right">
+
+      <div class="why-item">
+        <i class="ri-restaurant-line"></i>
+        <div>
+          <h4>01 Fresh Ingredients</h4>
+          <p>Only fresh and premium quality ingredients used.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-truck-line"></i>
+        <div>
+          <h4>02 Fast Delivery</h4>
+          <p>Quick delivery at your doorstep without delay.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-money-rupee-circle-line"></i>
+        <div>
+          <h4>03 Affordable Price</h4>
+          <p>Best taste at reasonable prices for everyone.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-star-line"></i>
+        <div>
+          <h4>04 Top Rated</h4>
+          <p>Highly rated by thousands of happy customers.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <i class="ri-shield-check-line"></i>
+        <div>
+          <h4>05 Hygiene & Safety</h4>
+          <p>Maintained with strict hygiene standards.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="testimonial-section">
+
+  <!-- HEADING -->
+  <h2 class="testimonial-heading">What Our Customers Say</h2>
+
+  <div class="testimonial-container">
+
+    <!-- CARD 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-icon">
+         <img src="images/food_icon.png" alt="food icon">
+      </div>
+      <p class="testimonial-text">
+        It was absolutely delicious! The food was fresh and perfectly cooked.
+        I really loved the taste and quality.
+      </p>
+      <div class="testimonial-stars">★★★★★</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-icon">
+       <img src="images/food_icon.png" alt="food icon">
+      </div>
+      <p class="testimonial-text">
+        Amazing experience! Fast delivery and great service.
+        The food arrived hot and tasted fantastic.
+      </p>
+      <div class="testimonial-stars">★★★★☆</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-icon">
+        <img src="images/food_icon.png" alt="food icon">
+      </div>
+      <p class="testimonial-text">
+        Best food ordering experience! Affordable price with premium quality.
+        Highly recommended for everyone.
+      </p>
+      <div class="testimonial-stars">★★★★★</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER SECTION -->
+<footer class="bio-footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT FOOD -->
+    <div class="footer-col">
+      <div class="footer-logo">
+        <img src="./images/stackly_logo.webp" alt="Food Logo">
+      </div>
+
+      <p>
+        We serve delicious and freshly prepared meals with the finest ingredients.
+        Enjoy a wide variety of dishes, fast delivery, and an amazing dining experience
+        right at your doorstep.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul class="social-links">
+        <li><a href="404.html"><i class="ri-facebook-fill"></i> Facebook</a></li>
+        <li><a href="404.html"><i class="ri-twitter-x-line"></i> Twitter</a></li>
+        <li><a href="404.html"><i class="ri-instagram-line"></i> Instagram</a></li>
+        <li><a href="404.html"><i class="ri-youtube-fill"></i> YouTube</a></li>
+      </ul>
+    </div>
+
+    <!-- FOOD CATEGORIES -->
+    <div class="footer-col">
+      <h4>Our Menu</h4>
+      <ul>
+        <li><a href="404.html">Veg Dishes</a></li>
+        <li><a href="404.html">Non-Veg Dishes</a></li>
+        <li><a href="404.html">Desserts</a></li>
+        <li><a href="404.html">Beverages</a></li>
+        <li><a href="404.html">Special Combos</a></li>
+      </ul>
+    </div>
+
+    <!-- CUSTOMER SUPPORT -->
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="404.html">My Orders</a></li>
+        <li><a href="404.html">Track Order</a></li>
+        <li><a href="404.html">Help Center</a></li>
+        <li><a href="404.html">Privacy Policy</a></li>
+        <li><a href="404.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Stackly Food | All Rights Reserved</p>
+  </div>
+
+</footer>
+<script>
+    let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function changeSlide(){
+  slides[index].classList.remove("active");
+
+  index = (index + 1) % slides.length;
+
+  slides[index].classList.add("active");
+}
+
+setInterval(changeSlide, 3000); // every 3 sec
+
+
+// FILTER FUNCTION
+function filterItems(category){
+  let cards = document.querySelectorAll(".food-card");
+  let buttons = document.querySelectorAll(".cat-btn");
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  event.target.classList.add("active");
+
+  cards.forEach(card => {
+    if(category === "all"){
+      card.style.display = "block";
+    } else {
+      if(card.classList.contains(category)){
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  });
+}
+
+// ❤️ HEART TOGGLE
+let hearts = document.querySelectorAll(".heart");
+
+hearts.forEach(icon => {
+  icon.addEventListener("click", () => {
+    icon.classList.toggle("active");
+
+    if(icon.classList.contains("active")){
+      icon.classList.replace("ri-heart-line","ri-heart-fill");
+    } else {
+      icon.classList.replace("ri-heart-fill","ri-heart-line");
+    }
+  });
+});
+</script>
+<script src="./js/script.js"></script>
+</body>
+</html>

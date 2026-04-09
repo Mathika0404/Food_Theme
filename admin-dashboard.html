@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food Admin Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <div class="sidebar-header">
+    <h2 class="logo">STACKLY</h2>
+    <div class="close-btn" id="closeBtn">
+      <i class="ri-close-line"></i>
+    </div>
+  </div>
+
+  <ul class="menu">
+    <li><a href="#dashboard" class="active"><i class="ri-restaurant-line"></i> Dashboard</a></li>
+    <li><a href="#orders"><i class="ri-takeaway-line"></i> Orders</a></li>
+    <li><a href="#customers"><i class="ri-user-smile-line"></i> Customers</a></li>
+    <li><a href="#inventory"><i class="ri-fridge-line"></i> Inventory</a></li>
+    <li><a href="#reviews"><i class="ri-star-smile-line"></i> Reviews</a></li>
+
+    <div class="menu-title">SYSTEM</div>
+
+    <li><a href="dashboard-404.html"><i class="ri-settings-4-line"></i> Settings</a></li>
+    <li><a href="dashboard-404.html"><i class="ri-logout-box-r-line"></i> Logout</a></li>
+  </ul>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <!-- LEFT -->
+  <div class="nav-left">
+    <div class="menu-btn" id="menuBtn">
+      <i class="ri-menu-line"></i>
+    </div>
+
+    <div class="nav-search">
+      <i class="ri-search-line"></i>
+      <input type="text" placeholder="Search food...">
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <h2 class="mobile-logo">STACKLY</h2>
+
+  <!-- RIGHT -->
+  <div class="nav-right">
+
+    <div class="icon hide-mobile">
+      <a href="404.html">
+        <i class="ri-notification-3-line"></i>
+        <span class="badge">2</span>
+      </a>
+    </div>
+
+    <div class="icon hide-mobile">
+      <a href="404.html">
+        <i class="ri-chat-1-line"></i>
+        <span class="badge">4</span>
+      </a>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">
+        <i class="ri-user-3-line"></i>
+      </div>
+      <div class="profile-info">
+        <p class="name">Chef Admin</p>
+        <p class="email">admin@foodify.com</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ✅ FIX: use class="content" -->
+<section class="content" id="dashboard">
+<div class="welcome-box">
+  <h1>Welcome Back, Chef 👋</h1>
+  <p>Food dashboard today</p>
+</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon-box">
+        <i class="ri-shopping-bag-3-line"></i>
+      </div>
+      <h1>1,245</h1>
+      <h3>Total Orders</h3>
+      <span class="percent up">+12%</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">
+        <i class="ri-currency-line"></i>
+      </div>
+      <h1>₹85,000</h1>
+      <h3>Revenue</h3>
+      <span class="percent up">+8%</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">
+        <i class="ri-user-smile-line"></i>
+      </div>
+      <h1>540</h1>
+      <h3>Customers</h3>
+      <span class="percent up">+5%</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-box">
+        <i class="ri-star-smile-line"></i>
+      </div>
+      <h1>320</h1>
+      <h3>Reviews</h3>
+      <span class="percent down">-2%</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- POPULAR -->
+<section class="dash-popular">
+
+  <h2 class="dash-heading">Popular Dishes</h2>
+
+  <div class="dash-container">
+
+<div class="dash-container">
+
+  <!-- CARD 1 -->
+  <div class="dash-card">
+    <div class="dash-img">
+      <img src="images/pizza.webp" alt="">
+      <div class="wishlist">
+        <i class="ri-heart-line"></i>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <h3>Cheese Pizza</h3>
+      <p class="price">₹200</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <a href="dashboard-404.html" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="dash-card">
+    <div class="dash-img">
+      <img src="images/grilled_chicken.webp" alt="">
+      <div class="wishlist">
+        <i class="ri-heart-line"></i>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <h3>Grilled Chicken</h3>
+      <p class="price">₹350</p>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <a href="dashboard-404.html" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="dash-card">
+    <div class="dash-img">
+      <img src="images/chocolate_cake.webp" alt="">
+      <div class="wishlist">
+        <i class="ri-heart-line"></i>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <h3>Chocolate Cake</h3>
+      <p class="price">₹120</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <a href="dashboard-404.html" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="dash-card">
+    <div class="dash-img">
+      <img src="images/pasta.webp" alt="">
+      <div class="wishlist">
+        <i class="ri-heart-line"></i>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <h3>Pasta</h3>
+      <p class="price">₹249</p>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+      <a href="dashboard-404.html" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+</section>
+
+<section class="orders-dashboard" id="orders">
+
+  <h2 class="dash-heading">Orders Overview</h2>
+
+  <!-- STATS -->
+  <div class="order-stats">
+
+    <div class="stat-card">
+      <h3>Total Orders</h3>
+      <h1>1,245</h1>
+    </div>
+
+    <div class="stat-card">
+      <h3>Pending Orders</h3>
+      <h1>320</h1>
+    </div>
+
+    <div class="stat-card">
+      <h3>Delivered Orders</h3>
+      <h1>850</h1>
+    </div>
+
+    <div class="stat-card">
+      <h3>Returned Orders</h3>
+      <h1>75</h1>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Revenue</h3>
+      <h1>₹85,000</h1>
+    </div>
+
+    <div class="stat-card">
+      <h3>Returned Cost</h3>
+      <h1>₹6,500</h1>
+    </div>
+
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts">
+
+    <div class="chart-box">
+      <h3>Orders by Location</h3>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Orders Trend</h3>
+      <canvas id="lineChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Order Status</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="recent-orders">
+
+  <h2 class="dash-heading">Recent Orders</h2>
+
+  <div class="recent-container">
+
+    <!-- CARD 1 -->
+    <div class="recent-card">
+      <img src="images/veg_rice.webp" alt="">
+      <div class="recent-content">
+        <h4>Veg Fried Rice</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>₹200</p>
+      </div>
+      <a href="dashboard-404.html" class="add-btn">+</a>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="recent-card">
+      <img src="images/burger.webp" alt="">
+      <div class="recent-content">
+        <h4>Burger</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>₹199</p>
+      </div>
+      <a href="dashboard-404.html" class="add-btn">+</a>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="recent-card">
+      <img src="images/pasta.webp" alt="">
+      <div class="recent-content">
+        <h4>Pasta</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>₹249</p>
+      </div>
+      <a href="dashboard-404.html" class="add-btn">+</a>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="recent-card">
+      <img src="images/chocolate_cake.webp" alt="">
+      <div class="recent-content">
+        <h4>Ice Cream</h4>
+        <div class="stars">⭐⭐⭐⭐☆</div>
+        <p>₹120</p>
+      </div>
+      <a href="dashboard-404.html" class="add-btn">+</a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="customers-section" id="customers">
+
+  <h2 class="dash-heading">Our Regular Customers</h2>
+
+  <div class="customers-container">
+
+    <!-- CARD 1 -->
+    <div class="customer-card">
+      <div class="customer-top">
+        <img src="images/customer1.webp" alt="">
+        <div class="status online"></div>
+      </div>
+
+      <div class="customer-info">
+        <h3>Arun Kumar</h3>
+        <p>Chennai</p>
+      </div>
+
+      <div class="customer-stats">
+        <div>
+          <h4>45</h4>
+          <span>Orders</span>
+        </div>
+        <div>
+          <h4>₹12K</h4>
+          <span>Spent</span>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width:80%"></div>
+      </div>
+
+      <a href="dashboard-404.html" class="view-btn">View</a>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="customer-card">
+      <div class="customer-top">
+        <img src="images/customer2.webp" alt="">
+        <div class="status offline"></div>
+      </div>
+
+      <div class="customer-info">
+        <h3>Priya</h3>
+        <p>Bangalore</p>
+      </div>
+
+      <div class="customer-stats">
+        <div>
+          <h4>30</h4>
+          <span>Orders</span>
+        </div>
+        <div>
+          <h4>₹9K</h4>
+          <span>Spent</span>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width:60%"></div>
+      </div>
+
+      <a href="dashboard-404.html" class="view-btn">View</a>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="customer-card">
+      <div class="customer-top">
+        <img src="images/customer3.webp" alt="">
+        <div class="status online"></div>
+      </div>
+
+      <div class="customer-info">
+        <h3>Rahul</h3>
+        <p>Hyderabad</p>
+      </div>
+
+      <div class="customer-stats">
+        <div>
+          <h4>52</h4>
+          <span>Orders</span>
+        </div>
+        <div>
+          <h4>₹15K</h4>
+          <span>Spent</span>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width:90%"></div>
+      </div>
+
+      <a href="dashboard-404.html" class="view-btn">View</a>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="customer-card">
+      <div class="customer-top">
+        <img src="images/customer4.webp" alt="">
+        <div class="status offline"></div>
+      </div>
+
+      <div class="customer-info">
+        <h3>Divya</h3>
+        <p>Mumbai</p>
+      </div>
+
+      <div class="customer-stats">
+        <div>
+          <h4>25</h4>
+          <span>Orders</span>
+        </div>
+        <div>
+          <h4>₹7K</h4>
+          <span>Spent</span>
+        </div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" style="width:50%"></div>
+      </div>
+
+      <a href="dashboard-404.html" class="view-btn">View</a>
+    </div>
+
+    
+<!-- CARD 5 -->
+<div class="customer-card">
+  <div class="customer-top">
+    <img src="images/customer5.webp" alt="">
+    <div class="status online"></div>
+  </div>
+
+  <div class="customer-info">
+    <h3>Karthik</h3>
+    <p>Coimbatore</p>
+  </div>
+
+  <div class="customer-stats">
+    <div>
+      <h4>38</h4>
+      <span>Orders</span>
+    </div>
+    <div>
+      <h4>₹10K</h4>
+      <span>Spent</span>
+    </div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" style="width:70%"></div>
+  </div>
+
+  <a href="dashboard-404.html" class="view-btn">View</a>
+</div>
+
+
+<!-- CARD 6 -->
+<div class="customer-card">
+  <div class="customer-top">
+    <img src="images/customer6.webp" alt="">
+    <div class="status offline"></div>
+  </div>
+
+  <div class="customer-info">
+    <h3>Anjali</h3>
+    <p>Madurai</p>
+  </div>
+
+  <div class="customer-stats">
+    <div>
+      <h4>20</h4>
+      <span>Orders</span>
+    </div>
+    <div>
+      <h4>₹6K</h4>
+      <span>Spent</span>
+    </div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" style="width:40%"></div>
+  </div>
+
+  <a href="dashboard-404.html" class="view-btn">View</a>
+</div>
+
+
+<!-- CARD 7 -->
+<div class="customer-card">
+  <div class="customer-top">
+    <img src="images/customer7.webp" alt="">
+    <div class="status online"></div>
+  </div>
+
+  <div class="customer-info">
+    <h3>Vikram</h3>
+    <p>Trichy</p>
+  </div>
+
+  <div class="customer-stats">
+    <div>
+      <h4>60</h4>
+      <span>Orders</span>
+    </div>
+    <div>
+      <h4>₹18K</h4>
+      <span>Spent</span>
+    </div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" style="width:95%"></div>
+  </div>
+
+  <a href="dashboard-404.html" class="view-btn">View</a>
+</div>
+
+
+<!-- CARD 8 -->
+<div class="customer-card">
+  <div class="customer-top">
+    <img src="images/customer8.webp" alt="">
+    <div class="status offline"></div>
+  </div>
+
+  <div class="customer-info">
+    <h3>Meena</h3>
+    <p>Salem</p>
+  </div>
+
+  <div class="customer-stats">
+    <div>
+      <h4>28</h4>
+      <span>Orders</span>
+    </div>
+    <div>
+      <h4>₹8K</h4>
+      <span>Spent</span>
+    </div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" style="width:55%"></div>
+  </div>
+
+  <a href="dashboard-404.html" class="view-btn">View</a>
+</div>
+
+
+  </div>
+
+</section>
+
+<section class="inventory-section" id="inventory">
+
+  <h2 class="dash-heading">Inventory Overview</h2>
+
+  <!-- TOP STATS -->
+  <div class="inventory-stats">
+
+    <div class="inv-card">
+      <h3>Total Items</h3>
+      <h1>120</h1>
+    </div>
+
+    <div class="inv-card">
+      <h3>Low Stock</h3>
+      <h1>18</h1>
+    </div>
+
+    <div class="inv-card">
+      <h3>Out of Stock</h3>
+      <h1>6</h1>
+    </div>
+
+    <div class="inv-card">
+      <h3>Total Value</h3>
+      <h1>₹1.2L</h1>
+    </div>
+
+  </div>
+
+  <!-- INVENTORY ITEMS -->
+  <div class="inventory-container">
+
+    <!-- ITEM -->
+    <div class="inv-item">
+      <img src="images/pizza.webp" alt="">
+      <div class="inv-info">
+        <h4>Pizza Base</h4>
+        <p>Stock: 80</p>
+
+        <div class="progress">
+          <div class="progress-bar" style="width:80%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-item">
+      <img src="images/bun.webp" alt="">
+      <div class="inv-info">
+        <h4>Burger Bun</h4>
+        <p>Stock: 40</p>
+
+        <div class="progress">
+          <div class="progress-bar" style="width:40%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-item">
+      <img src="images/chicken.webp" alt="">
+      <div class="inv-info">
+        <h4>Chicken</h4>
+        <p>Stock: 20</p>
+
+        <div class="progress">
+          <div class="progress-bar" style="width:20%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="inv-item">
+      <img src="images/cheese.webp" alt="">
+      <div class="inv-info">
+        <h4>Cheese</h4>
+        <p>Stock: 10</p>
+
+        <div class="progress">
+          <div class="progress-bar" style="width:10%"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BAR CHART -->
+  <div class="inventory-chart">
+    <h3>Stock Distribution</h3>
+    <canvas id="inventoryBar"></canvas>
+  </div>
+
+</section>
+
+<section class="review-section" id="reviews">
+
+  <h2 class="dash-heading">Customer Reviews</h2>
+
+  <div class="review-container">
+
+    <!-- REVIEW 1 -->
+    <div class="review-card">
+      <div class="review-top">
+        <img src="images/customer1.webp" alt="">
+        <div>
+          <h3>Arun Kumar</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <p class="review-text">
+        Food was amazing and delivery was super fast! Loved the taste 😍
+      </p>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="review-card">
+      <div class="review-top">
+        <img src="images/customer2.webp" alt="">
+        <div>
+          <h3>Priya</h3>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+        </div>
+      </div>
+      <p class="review-text">
+        Good quality food, packaging was neat. Will order again 👍
+      </p>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="review-card">
+      <div class="review-top">
+        <img src="images/customer3.webp" alt="">
+        <div>
+          <h3>Rahul</h3>
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+      <p class="review-text">
+        One of the best food experiences! Highly recommended 🔥
+      </p>
+    </div>
+
+    <!-- REVIEW 4 -->
+    <div class="review-card">
+      <div class="review-top">
+        <img src="images/customer4.webp" alt="">
+        <div>
+          <h3>Divya</h3>
+          <div class="stars">⭐⭐⭐⭐☆</div>
+        </div>
+      </div>
+      <p class="review-text">
+        Taste was good but delivery took little time.
+      </p>
+    </div>
+
+    
+<!-- REVIEW 5 -->
+<div class="review-card">
+  <div class="review-top">
+    <img src="images/customer5.webp" alt="">
+    <div>
+      <h3>Karthik</h3>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+  </div>
+  <p class="review-text">
+    Food quality was really good. Loved the flavors and presentation 👌
+  </p>
+</div>
+
+<!-- REVIEW 6 -->
+<div class="review-card">
+  <div class="review-top">
+    <img src="images/customer6.webp" alt="">
+    <div>
+      <h3>Anjali</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+  </div>
+  <p class="review-text">
+    Super fast delivery and tasty food. Highly satisfied ❤️
+  </p>
+</div>
+
+<!-- REVIEW 7 -->
+<div class="review-card">
+  <div class="review-top">
+    <img src="images/customer7.webp" alt="">
+    <div>
+      <h3>Vikram</h3>
+      <div class="stars">⭐⭐⭐⭐☆</div>
+    </div>
+  </div>
+  <p class="review-text">
+    Good experience overall. Packaging was neat and clean 👍
+  </p>
+</div>
+
+<!-- REVIEW 8 -->
+<div class="review-card">
+  <div class="review-top">
+    <img src="images/customer8.webp" alt="">
+    <div>
+      <h3>Meena</h3>
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+  </div>
+  <p class="review-text">
+    One of the best restaurants! Will definitely order again 🔥
+  </p>
+</div>
+
+
+  </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/admin-dashboard.js"></script>
+<script>
+  // BAR CHART (Location Orders)
+new Chart(document.getElementById("barChart"), {
+  type: "bar",
+  data: {
+    labels: ["Chennai", "Bangalore", "Hyderabad", "Mumbai", "Delhi"],
+    datasets: [{
+      label: "Orders",
+      data: [300, 250, 200, 280, 220],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+
+// LINE CHART (Orders Trend)
+new Chart(document.getElementById("lineChart"), {
+  type: "line",
+  data: {
+    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    datasets: [{
+      label: "Orders",
+      data: [120, 190, 170, 220, 260, 300, 280],
+      tension: 0.4, // smooth wave effect
+      fill: true
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+
+// PIE CHART (Status)
+new Chart(document.getElementById("pieChart"), {
+  type: "pie",
+  data: {
+    labels: ["Delivered", "Pending", "Returned"],
+    datasets: [{
+      data: [850, 320, 75]
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+
+new Chart(document.getElementById("inventoryBar"), {
+  type: "bar",
+  data: {
+    labels: ["Pizza Base", "Burger Bun", "Chicken", "Cheese"],
+    datasets: [{
+      label: "Stock Quantity",
+      data: [80, 40, 20, 10],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true
+  }
+});
+</script>
+</body>
+</html>
