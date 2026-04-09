@@ -110,7 +110,7 @@
       </li>
 
       <li><a href="about.html">About Us</a></li>
-      <li><a href="categories.html">Menu</a></li>
+      <li><a href="menu.html">Menu</a></li>
       <!-- <li><a href="offers.html">Offers</a></li> -->
       <li><a href="contact.html">Contact Us</a></li>
 <li>
@@ -175,7 +175,7 @@
   <input type="email" id="cemail" placeholder="Your Email">
   <small class="error"></small>
 
-  <input type="tel" id="cphone" placeholder="Phone Number">
+<input type="tel" id="cphone" placeholder="Phone Number" pattern="[0-9]*" inputmode="numeric">
   <small class="error"></small>
 
   <textarea id="cmessage" rows="5" placeholder="Your Message"></textarea>
@@ -282,37 +282,52 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 
   let isValid = true;
 
+  // Clear old errors
   document.querySelectorAll(".error").forEach(el => el.innerText = "");
   document.querySelectorAll("#contactForm input, #contactForm textarea")
     .forEach(el => el.classList.remove("error-border"));
 
+  // NAME
   if(name.value.trim() === ""){
     name.nextElementSibling.innerText = "Name is required";
     name.classList.add("error-border");
     isValid = false;
   }
 
-if(email.value.trim() === ""){
-  email.nextElementSibling.innerText = "Email is required";
-  email.classList.add("error-border");
-  isValid = false;
-}
-else{
-  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-  if(!emailPattern.test(email.value)){
-    email.nextElementSibling.innerText = "Enter valid email (example@gmail.com)";
+  // EMAIL
+  if(email.value.trim() === ""){
+    email.nextElementSibling.innerText = "Email is required";
     email.classList.add("error-border");
     isValid = false;
   }
-}
+  else{
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
+    if(!emailPattern.test(email.value)){
+      email.nextElementSibling.innerText = "Enter valid email (example@gmail.com)";
+      email.classList.add("error-border");
+      isValid = false;
+    }
+  }
+
+  // PHONE (FIXED ✅ no duplicate declaration)
   if(phone.value.trim() === ""){
     phone.nextElementSibling.innerText = "Phone number is required";
     phone.classList.add("error-border");
     isValid = false;
   }
+  else if(!/^[0-9]+$/.test(phone.value.trim())){
+    phone.nextElementSibling.innerText = "Only numbers are allowed";
+    phone.classList.add("error-border");
+    isValid = false;
+  }
+  else if(phone.value.length !== 10){
+    phone.nextElementSibling.innerText = "Phone number must be 10 digits";
+    phone.classList.add("error-border");
+    isValid = false;
+  }
 
+  // MESSAGE
   if(message.value.trim() === ""){
     message.nextElementSibling.innerText = "Message is required";
     message.classList.add("error-border");
@@ -323,6 +338,12 @@ else{
   if(isValid){
     window.location.href = "404.html";
   }
+});
+
+let phoneInput = document.getElementById("cphone");
+
+phoneInput.addEventListener("input", function () {
+  this.value = this.value.replace(/[^0-9]/g, "");
 });
 </script>
 <script src="./js/script.js"></script>
