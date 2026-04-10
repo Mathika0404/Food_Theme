@@ -187,6 +187,12 @@ align-items:center;
 justify-content:center;
 }
 
+.error-msg{
+  color:red;
+  font-size:12px;
+  display:none;
+}
+
 /* BOX */
 .login-box{
 background:#111;

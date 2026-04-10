@@ -66,14 +66,45 @@ function updateForm(){
 }
 
 
+/* PHONE REAL-TIME VALIDATION */
+const phoneInput = document.getElementById("phoneNumber");
+
+// create error element if not exists
+let phoneError = document.getElementById("phoneError");
+if(!phoneError){
+  phoneError = document.createElement("small");
+  phoneError.id = "phoneError";
+  phoneError.style.color = "red";
+  phoneError.style.fontSize = "12px";
+  phoneError.style.display = "none";
+  phoneInput.parentNode.appendChild(phoneError);
+}
+
+phoneInput.addEventListener("input", function(){
+
+  const regex = /^[0-9]*$/;
+
+  if(!regex.test(phoneInput.value)){
+    phoneInput.style.border = "2px solid red";
+    phoneError.style.display = "block";
+    phoneError.innerText = "Give numbers only!";
+  } else {
+    phoneInput.style.border = "1px solid #ccc";
+    phoneError.style.display = "none";
+  }
+
+});
+
+
 /* SUBMIT */
 function handleAuthSubmit(e){
   e.preventDefault();
 
-const email = document.getElementById("email");
-const password = document.getElementById("loginPassword");
-const phone = document.getElementById("phoneNumber"); 
-const role = document.getElementById("loginRole");
+  const email = document.getElementById("email");
+  const password = document.getElementById("loginPassword");
+  const phone = document.getElementById("phoneNumber"); 
+  const role = document.getElementById("loginRole");
+  const phoneRegex = /^[0-9]+$/;
 
   let isValid = true;
 
@@ -82,6 +113,8 @@ const role = document.getElementById("loginRole");
     input.style.border = "1px solid #ccc";
   });
 
+  phoneError.style.display = "none";
+
   // EMAIL
   if(email.value.trim() === ""){
     email.style.border = "2px solid red";
@@ -89,10 +122,18 @@ const role = document.getElementById("loginRole");
   }
 
   // PHONE
-if(phone.value.trim() === ""){
-  phone.style.border = "2px solid red";
-  isValid = false;
-}
+  if(phone.value.trim() === ""){
+    phone.style.border = "2px solid red";
+    phoneError.style.display = "block";
+    phoneError.innerText = "Phone number required!";
+    isValid = false;
+  }
+  else if(!phoneRegex.test(phone.value)){
+    phone.style.border = "2px solid red";
+    phoneError.style.display = "block";
+    phoneError.innerText = "Give numbers only!";
+    isValid = false;
+  }
 
   // PASSWORD
   if(password.value.trim() === ""){
@@ -101,38 +142,31 @@ if(phone.value.trim() === ""){
   }
 
   /* LOGIN */
-if(!isSignup){
+  if(!isSignup){
 
-  if(!isValid){
-    alert("Please fill all fields!");
-    return;
-  }
+    if(!isValid){
+      alert("Please fill all fields correctly!");
+      return;
+    }
 
-  if(role.value === "admin"){
-    window.location.href = "admin-dashboard.html";
-  }
-  else{
-    window.location.href = "user-dashboard.html";
-  }
+    if(role.value === "admin"){
+      window.location.href = "admin-dashboard.html";
+    }
+    else{
+      window.location.href = "user-dashboard.html";
+    }
 
-}
+  }
   
   /* SIGNUP */
   else {
 
     const name = document.getElementById("fullName");
-    const phone = document.getElementById("phoneNumber");
     const confirmPassword = document.getElementById("confirmPassword");
 
     // NAME
     if(name.value.trim() === ""){
       name.style.border = "2px solid red";
-      isValid = false;
-    }
-
-    // PHONE
-    if(phone.value.trim() === ""){
-      phone.style.border = "2px solid red";
       isValid = false;
     }
 
@@ -144,7 +178,7 @@ if(!isSignup){
 
     // EMPTY CHECK
     if(!isValid){
-      alert("Please fill all fields!");
+      alert("Please fill all fields correctly!");
       return;
     }
 
@@ -160,6 +194,7 @@ if(!isSignup){
     window.location.href = "404.html";
   }
 }
+
 
 /* PASSWORD TOGGLE */
 function togglePassword(){
